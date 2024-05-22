@@ -103,6 +103,11 @@ mv "$CLONE_DIR/.git" "$TEMP_DIR/.git"
 # $TARGET_DIRECTORY is '' by default
 ABSOLUTE_TARGET_DIRECTORY="$CLONE_DIR/$TARGET_DIRECTORY/"
 
+if [ -d "$ABSOLUTE_TARGET_DIRECTORY" ]; then
+  echo "[+] Create target directory"
+  mkdir -p "$ABSOLUTE_TARGET_DIRECTORY"
+fi
+
 echo "[+] Listing Current Directory Location"
 ls -al
 
